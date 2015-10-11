@@ -125,8 +125,9 @@ Remove the Android specific bindings:
 
 Import the ``MegaCRUDJavaPractice`` project into your favourite Java IDE, for example https://www.jetbrains.com/idea/. Build and run ``MEGACRUD.java``.
 
+Done
+----
 Congratulations! You have successfully completed these instructions.
 
 .. NOTE::
     This guide was tested on Ubuntu 15.04 and is adapted from: https://github.com/meganz/sdk/blob/master/README.md and https://help.ubuntu.com/community/CompilingEasyHowTo
-    
