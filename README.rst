@@ -8,27 +8,27 @@ MEGA Ltd provides a Software Development Kit (SDK) for its cloud storage service
 
 This README describes how to install the MEGA SDK Java bindings and run a basic code example application from Ubuntu. Familiarity with Bash command terminal or similar is recommended.
 
-Installation
-------------
+1 Installation
+--------------
 
 .. @TODO Script automating the following steps here
 
-Prepare System
-``````````````
+1.1 Prepare System
+``````````````````
 
 .. code:: bash
 
     sudo apt-get install build-essential autoconf libtool git-core
 
-Install Dependencies
-`````````````````````
+1.2 Install Dependencies
+````````````````````````
 
 .. code:: bash
 
     sudo apt-get install libcrypto++-dev zlib1g-dev libsqlite3-dev libssl-dev libc-ares-dev libcurl4-openssl-dev libfreeimage-dev libreadline6-dev swig2.0 default-jdk
 
-Build & Compile 
-```````````````
+1.3 Build & Compile 
+```````````````````
 
 .. code:: bash
     
@@ -55,48 +55,53 @@ Build & Compile
     sudo make install
 
 
-Run Example Code
-----------------
+2 Example Code
+--------------
 
 .. code:: bash
     
-    git clone https://code.developers.mega.co.nz/jaimesbooth/MegaCRUDJavaPractice.git
+    git clone https://github.com/jaimesBooth/MEGASDKCRUDJavaExample.git
 
 .. code:: bash
 
-    mkdir -p MegaCRUDJavaPractice/libs
-
-.. code:: bash
-    
-    cp bindings/java/.libs/libmegajava.so MegaCRUDJavaPractice/libs
+    mkdir -p MEGASDKCRUDJavaExample/libs
 
 .. code:: bash
     
-    mkdir -p MegaCRUDJavaPractice/src/nz/mega/sdk
-    cp bindings/java/nz/mega/sdk/*.java MegaCRUDJavaPractice/src/nz/mega/sdk
+    cp bindings/java/.libs/libmegajava.so MEGASDKCRUDJavaExample/libs
 
-Enter Credentials
-`````````````````
+.. code:: bash
+    
+    mkdir -p MEGASDKCRUDJavaExample/src/nz/mega/sdk
+    
+.. code:: bash
+
+    cp bindings/java/nz/mega/sdk/*.java MEGASDKCRUDJavaExample/src/nz/mega/sdk
+
+2.1 Enter Credentials
+`````````````````````
 The ``credentials.txt`` file is used to automate the login process. Place the user's MEGA login details on a separate line as indicated.
 
 .. code:: bash
     
     gedit ~/sdk/MEGASDKCRUDJavaExample/credentials.txt
 
-Run MEGACRUDJavaExample
-```````````````````````
-The example code can be run either from the terminal (A) **or** from an IDE (B).
+Save and close the text editor.
 
-A. From Terminal
-'''''''''''''''''
+2.2 Run Example Code
+````````````````````
+The example code can be run either from a Terminal (2.2.1) **or** from an IDE (2.2.2).
+
+.. code:: bash
+
+    cd MEGASDKCRUDJavaExample
+
+2.2.1 From Terminal
+'''''''''''''''''''
 
 .. code:: bash
     
-    mkdir -p MegaCRUDJavaPractice/bin
-  
-.. code:: bash
-
-    cd MegaCRUDJavaPractice
+    mkdir -p MEGASDKCRUDJavaExample/bin
 
 .. code:: bash
     
@@ -106,24 +111,24 @@ A. From Terminal
 
     java -cp bin nz.mega.megacrudexample.MEGACRUD
 
-B. From an IDE
-''''''''''''''
+2.2.2 From an IDE
+'''''''''''''''''
 
 Remove the Android specific bindings:
- 
-.. code:: bash
-
-    rm MegaCRUDJavaPractice/java/src/nz/mega/sdkMegaUtilsAndroid.java
     
 .. code:: bash
 
-    rm MegaCRUDJavaPractice/java/src/nz/mega/AndroidGfxProcessor.java
+    rm src/nz/mega/sdk/AndroidGfxProcessor.java
     
 .. code:: bash
 
-    rm MegaCRUDJavaPractice/java/src/nz/mega/MegaApiAndroid.java
+    rm src/nz/mega/sdk/MegaApiAndroid.java
 
-Import the ``MegaCRUDJavaPractice`` project into your favourite Java IDE, for example https://www.jetbrains.com/idea/. Build and run ``MEGACRUD.java``.
+.. code:: bash
+
+    rm src/nz/mega/sdk/MegaUtilsAndroid.java
+
+Import the ``MEGASDKCRUDJavaExample`` project into your favourite Java IDE, for example https://www.jetbrains.com/idea/. Build and run ``MEGACRUD.java``.
 
 Done
 ----
