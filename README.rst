@@ -101,7 +101,7 @@ The example code can be run either from a Terminal (2.2.1) **or** from an IDE (2
 
 .. code:: bash
     
-    mkdir -p MEGASDKCRUDJavaExample/bin
+    mkdir bin/
 
 .. code:: bash
     
